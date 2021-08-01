@@ -1,4 +1,4 @@
-package com.uu.chotlien.product;
+package com.uu.chotlien.domain.product;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;

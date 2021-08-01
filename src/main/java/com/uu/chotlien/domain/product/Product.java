@@ -1,4 +1,4 @@
-package com.uu.chotlien.product;
+package com.uu.chotlien.domain.product;
 
 import com.uu.chotlien.common.BaseDocument;
 import lombok.Data;
