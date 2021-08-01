@@ -25,7 +25,7 @@ public class JwtTokenProvider {
     private final long JWT_EXPIRATION = 604800000L;
 
     @PostConstruct
-    public void postContruct() {
+    public void postConstruct() {
         this.key = Keys.hmacShaKeyFor(JWT_SECRET.getBytes(StandardCharsets.UTF_8));
     }
 
