@@ -1,7 +1,7 @@
-package com.uu.chotlien.domain.catalog;
+package com.uu.chotlien.domain.supplier;
 
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class CatalogController {
+public class SupplierController {
 }
