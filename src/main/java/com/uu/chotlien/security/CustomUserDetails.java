@@ -51,4 +51,8 @@ public class CustomUserDetails implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+    public String getOrganizationId() {
+        return user.getOrganizationId();
+    }
 }
