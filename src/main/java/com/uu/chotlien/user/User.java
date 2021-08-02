@@ -20,4 +20,8 @@ public class User extends BaseDocument {
     private String password;
 
     private String organizationId;
+
+    public String getName() {
+        return this.name != null ? this.name : this.email;
+    }
 }
