@@ -16,9 +16,6 @@ import java.util.List;
 @Service
 public class ProductService {
     @Autowired
-    ProductRepository productRepository;
-
-    @Autowired
     MongoTemplate mongoTemplate;
 
     public Product create(CustomUserDetails user, ProductDTO dto) {
