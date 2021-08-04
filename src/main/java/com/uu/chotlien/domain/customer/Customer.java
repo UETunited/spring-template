@@ -7,6 +7,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document("customers")
 @Data
 public class Customer extends BaseDocument {
+    private String organizationId;
+
     private String name;
     private String email;
     private String phoneNumber;

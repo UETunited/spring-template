@@ -9,6 +9,8 @@ import java.util.List;
 @Document("orders")
 @Data
 public class Order extends BaseDocument {
+    private String organizationId;
+
     private String number;
     private Double subTotal;
     private Double shippingFee;

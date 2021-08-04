@@ -9,6 +9,8 @@ import java.util.List;
 @Data
 @Document("suppliers")
 public class Supplier extends BaseDocument {
+    private String organizationId;
+
     private String name;
     private String address;
     private String ward;
