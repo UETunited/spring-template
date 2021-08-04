@@ -1,12 +1,9 @@
 package com.uu.chotlien.domain.customer;
 
-import com.uu.chotlien.common.BaseDocument;
 import lombok.Data;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document("customers")
 @Data
-public class Customer extends BaseDocument {
+public class CustomerDTO {
     private String name;
     private String email;
     private String phoneNumber;

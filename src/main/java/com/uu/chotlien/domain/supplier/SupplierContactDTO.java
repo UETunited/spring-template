@@ -3,7 +3,7 @@ package com.uu.chotlien.domain.supplier;
 import lombok.Data;
 
 @Data
-public class SupplierContact {
+public class SupplierContactDTO {
     private String contactName;
     private String contactPersonName;
     private String contactPersonPosition;

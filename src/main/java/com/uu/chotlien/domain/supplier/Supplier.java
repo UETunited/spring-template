@@ -11,6 +11,7 @@ import java.util.List;
 public class Supplier extends BaseDocument {
     private String name;
     private String address;
+    private String ward;
     private String district;
     private String province;
     private String country;
