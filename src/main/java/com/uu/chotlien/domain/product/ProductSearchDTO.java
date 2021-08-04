@@ -10,6 +10,6 @@ public class ProductSearchDTO extends SearchDTO {
     private String text;
     private Boolean isActive;
     private Boolean isDeleted;
-    private List<String> catalogIds;
-    private List<String> tagIds;
+    private String catalogId;
+    private String tagId;
 }

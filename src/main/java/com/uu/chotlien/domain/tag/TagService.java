@@ -44,6 +44,8 @@ public class TagService {
             query.addCriteria(Criteria.where("active").is(searchDTO.getIsActive()));
         if (searchDTO.getIsDeleted())
             query.addCriteria(Criteria.where("deleted").is(searchDTO.getIsDeleted()));
+        if (searchDTO.getType() != null)
+            query.addCriteria(Criteria.where("type").is(searchDTO.getType()));
         query.skip(searchDTO.getSkip()).limit(searchDTO.getLimit());
         return mongoTemplate.find(query, Tag.class);
     }

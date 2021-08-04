@@ -41,10 +41,10 @@ public class ProductService {
             query.addCriteria(Criteria.where("active").is(searchDTO.getIsActive()));
         if (searchDTO.getIsDeleted())
             query.addCriteria(Criteria.where("deleted").is(searchDTO.getIsDeleted()));
-        if (searchDTO.getCatalogIds() != null)
-            query.addCriteria(Criteria.where("catalogIds").all(searchDTO.getCatalogIds()));
-        if (searchDTO.getTagIds() != null)
-            query.addCriteria(Criteria.where("tagIds").all(searchDTO.getTagIds()));
+        if (searchDTO.getCatalogId() != null)
+            query.addCriteria(Criteria.where("catalogIds").all(searchDTO.getCatalogId()));
+        if (searchDTO.getTagId() != null)
+            query.addCriteria(Criteria.where("tagIds").all(searchDTO.getTagId()));
         query.skip(searchDTO.getSkip()).limit(searchDTO.getLimit());
         return mongoTemplate.find(query, Product.class);
     }

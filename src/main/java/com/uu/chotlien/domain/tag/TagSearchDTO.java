@@ -8,7 +8,7 @@ import java.util.List;
 @Data
 public class TagSearchDTO extends SearchDTO {
     private String text;
-    private List<TagType> types;
+    private TagType type;
     private Boolean isActive;
     private Boolean isDeleted;
 }
