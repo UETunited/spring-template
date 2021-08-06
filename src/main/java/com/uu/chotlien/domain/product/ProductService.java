@@ -37,9 +37,9 @@ public class ProductService {
         query.addCriteria(Criteria.where("organizationId").is(user.getOrganizationId()));
         if (searchDTO.getText() != null)
             query.addCriteria(TextCriteria.forDefaultLanguage().matchingPhrase(searchDTO.getText()));
-        if (searchDTO.getIsActive())
+        if (searchDTO.getIsActive() != null)
             query.addCriteria(Criteria.where("active").is(searchDTO.getIsActive()));
-        if (searchDTO.getIsDeleted())
+        if (searchDTO.getIsDeleted() != null)
             query.addCriteria(Criteria.where("deleted").is(searchDTO.getIsDeleted()));
         if (searchDTO.getCatalogId() != null)
             query.addCriteria(Criteria.where("catalogIds").all(searchDTO.getCatalogId()));
