@@ -35,6 +35,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 // Lấy id user từ chuỗi jwt
                 String userId = tokenProvider.getUserIdFromJWT(jwt);
                 // Lấy thông tin người dùng từ id
+                // TODO: create user information from token, not load from DB
                 UserDetails userDetails = customUserDetailsService.loadUserById(userId);
                 if (userDetails != null) {
                     // Nếu người dùng hợp lệ, set thông tin cho Seturity Context

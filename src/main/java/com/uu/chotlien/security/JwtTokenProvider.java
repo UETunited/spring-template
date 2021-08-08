@@ -47,7 +47,6 @@ public class JwtTokenProvider {
 
     // Lấy thông tin user từ jwt
     public String getUserIdFromJWT(String token) {
-//        SecretKey key = Keys.hmacShaKeyFor(JWT_SECRET.getBytes(StandardCharsets.UTF_8));
         Claims claims = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token).getBody();
         return claims.getSubject();
     }

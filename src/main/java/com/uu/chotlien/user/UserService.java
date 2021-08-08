@@ -24,15 +24,20 @@ public class UserService {
     PasswordEncoder passwordEncoder;
 
     public User createUser(RegisterRequest registerRequest) {
-        Optional<User> oldUser = userRepository.findUserByEmail(registerRequest.getEmail());
-        if (oldUser.isPresent()) throw ValidationException.of(ErrorCode.EMAIL_REGISTERED, "Email already registered");
+        Optional<User> oldUser = userRepository.findUserByEmailOrUsername(registerRequest.getEmail(), registerRequest.getUsername());
+        if (oldUser.isPresent()) {
+            if (oldUser.get().getEmail().equals(registerRequest.getEmail()))
+                throw ValidationException.of(ErrorCode.EMAIL_REGISTERED, "Email already registered");
+            throw ValidationException.of(ErrorCode.USERNAME_REGISTERED, "Username already registered");
+        }
 
         final String userId = NanoIdUtils.randomNanoId();
         final Organization org = organizationService.create(userId);
 
         User user = User.builder()
                 .email(registerRequest.getEmail())
-                .name(registerRequest.getName())
+                .fullName(registerRequest.getFullName())
+                .username(registerRequest.getUsername())
                 .password(passwordEncoder.encode(registerRequest.getPassword()))
                 .build();
         user.setId(userId);

@@ -5,23 +5,21 @@ import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document("users")
 @Data
 @Builder
 public class User extends BaseDocument {
-    @Field("name")
-    private String name;
-    @Field("email")
+    private String fullName;
+    @Indexed(unique = true)
+    private String username;
+    private String password;
     @Indexed(unique = true)
     private String email;
-    @Field("password")
-    private String password;
 
     private String organizationId;
 
     public String getName() {
-        return this.name != null ? this.name : this.email;
+        return this.fullName != null ? this.fullName : this.username;
     }
 }
