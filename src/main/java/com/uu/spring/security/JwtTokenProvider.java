@@ -38,7 +38,7 @@ public class JwtTokenProvider {
         return Jwts.builder()
                 .setSubject(userDetails.getUser().getId())
                 .claim("organizationId", userDetails.getUser().getOrganizationId())
-                .claim("username", userDetails.getUser().getName())
+                .claim("username", userDetails.getUser().getUsername())
                 .setIssuedAt(now)
                 .setExpiration(expiryDate)
                 .signWith(key)

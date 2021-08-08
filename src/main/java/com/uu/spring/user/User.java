@@ -19,7 +19,4 @@ public class User extends BaseDocument {
 
     private String organizationId;
 
-    public String getName() {
-        return this.fullName != null ? this.fullName : this.username;
-    }
 }
