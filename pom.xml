@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.uu</groupId>
-    <artifactId>chotlien-api</artifactId>
+    <artifactId>spring-template</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>chotlien-api</name>
-    <description>Spring Boot chotlien-api project</description>
+    <name>spring-template</name>
+    <description>Spring Boot template project</description>
     <properties>
         <java.version>11</java.version>
     </properties>
